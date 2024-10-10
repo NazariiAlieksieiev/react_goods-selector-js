@@ -49,7 +49,7 @@ export function App() {
               }
             >
               {' '}
-              {selectedGood === good && (
+              {selectedGood === good ? (
                 <td>
                   <button
                     data-cy="RemoveButton"
@@ -60,11 +60,7 @@ export function App() {
                     -
                   </button>
                 </td>
-              )}
-              <td data-cy="GoodTitle" className="is-vcentered">
-                {good}
-              </td>
-              {selectedGood !== good && (
+              ) : (
                 <td>
                   <button
                     data-cy="AddButton"
@@ -76,6 +72,9 @@ export function App() {
                   </button>
                 </td>
               )}
+              <td data-cy="GoodTitle" className="is-vcentered">
+                {good}
+              </td>
             </tr>
           ))}
         </tbody>
